@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Access Policy</title>
+</head>
+<body>
+    <h1>Create Access Policy for Azure Key Vault</h1>
+    <form id="accessPolicyForm" onsubmit="handleSubmit(event)">
+        <label for="vaultName">Key Vault Name:</label><br>
+        <input type="text" id="vaultName" name="vaultName" required><br><br>
+        <label for="email">Email ID:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Create Access Policy">
+    </form>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const vaultName = document.getElementById('vaultName').value;
+            const email = document.getElementById('email').value;
+
+            // Display the input values (or you can send them to a server)
+            alert(`Key Vault Name: ${vaultName}\nEmail ID: ${email}`);
+
+            // Optionally, you can call the Python script here using a method like AJAX,
+            // but that requires a backend server to process the request.
+            console.log(`You would now call the Python script with: vaultName=${vaultName}, email=${email}`);
+        }
+    </script>
+</body>
+</html>
